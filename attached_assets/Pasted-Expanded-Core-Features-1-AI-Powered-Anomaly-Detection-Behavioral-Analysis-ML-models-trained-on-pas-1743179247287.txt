@@ -1,0 +1,71 @@
+Expanded Core Features
+1. AI-Powered Anomaly Detection
+Behavioral Analysis: ML models trained on past CIT attacks to recognize:
+
+Unusual vehicle movements (sudden stops, U-turns, convoy formation)
+
+Suspicious pedestrian loitering near CIT stops
+
+Predictive Risk Scoring: Assigns threat levels based on location, time, and historical crime data.
+
+2. Facial & Object Recognition for Threat Identification
+Facial Recognition:
+
+Scans faces near CIT vehicles in real time
+
+Cross-references with criminal databases
+
+Flags known suspects or persons of interest
+
+Weapon Detection (AI Object Scanning):
+
+Inside Vehicles: Uses millimeter-wave scanning or RF sensors to detect hidden firearms.
+
+Outside Vehicles: Computer vision analyzes CCTV, dashcams, and drones to identify:
+
+Visible firearms (rifles, handguns)
+
+Suspicious objects (crowbars, masks, duffel bags)
+
+Thermal Imaging: Detects hidden weapons under clothing.
+
+3. Dynamic Geo-Tagging & Vehicle Tracking
+Automated Suspicious Vehicle Tagging:
+
+When CIT vehicle stops, AI tags all nearby vehicles within 500m.
+
+If CIT moves within 5 minutes, tags are discarded (false alarm prevention).
+
+If CIT remains stationary, tracking continues and threat assessment escalates.
+
+Route Reconstruction:
+
+Uses satellite imagery & traffic cams to map suspect vehicle paths.
+
+Predicts possible escape routes for law enforcement.
+
+4. Satellite & Drone Surveillance Integration
+Live Satellite Tracking:
+
+Monitors CIT vehicle movement in high-risk zones.
+
+Provides real-time overhead view during incidents.
+
+Drone Support:
+
+Deploys UAVs for aerial surveillance if an attack is detected.
+
+Tracks fleeing suspects beyond line-of-sight.
+
+5. Real-Time Threat Response System
+Automated Alerts:
+
+Notifies armed response teams, police, and central command.
+
+Shares suspect descriptions, vehicle details, and live location.
+
+Vehicle Lockdown & Countermeasures:
+
+Remote engine kill switch if hijacking is imminent.
+
+Smoke screens, GPS jamming, or tire spikes (if legally compliant).
