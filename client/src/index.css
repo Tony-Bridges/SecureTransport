@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+/* Micro-interactions */
+@layer components {
+  .interactive-item {
+    @apply transition-all duration-200 ease-in-out relative overflow-hidden;
+  }
+  
+  .interactive-item:hover {
+    @apply transform scale-[1.05] shadow-lg;
+  }
+  
+  .interactive-item:active {
+    @apply transform scale-[0.97] shadow-inner;
+  }
+  
+  .interactive-item::after {
+    content: '';
+    @apply absolute inset-0 bg-white bg-opacity-0 transition-all duration-300;
+  }
+  
+  .interactive-item:hover::after {
+    @apply bg-opacity-10;
+  }
+  
+  /* Button hover animations */
+  .btn-hover-effect {
+    @apply relative overflow-hidden transition-all duration-300;
+  }
+  
+  .btn-hover-effect::after {
+    content: '';
+    @apply absolute top-0 h-full w-0 left-0 bg-white bg-opacity-10 transition-all duration-300 ease-out rounded-md;
+  }
+  
+  .btn-hover-effect:hover::after {
+    @apply w-full;
+  }
+  
+  /* Card hover effects */
+  .card-hover {
+    @apply transition-all duration-300 ease-in-out relative overflow-hidden;
+  }
+  
+  .card-hover:hover {
+    @apply transform translate-y-[-5px] shadow-lg scale-[1.02];
+  }
+  
+  .card-hover::before {
+    content: '';
+    @apply absolute -inset-x-full -bottom-1/2 h-40 bg-gradient-to-r from-transparent via-white to-transparent opacity-0 blur-xl transition-all duration-700;
+  }
+  
+  .card-hover:hover::before {
+    @apply -inset-x-0 opacity-30 animate-shine;
+  }
+  
+  @keyframes shine {
+    from {
+      left: -200%;
+    }
+    to {
+      left: 200%;
+    }
+  }
+  
+  /* Alert pulse animation */
+  .alert-pulse {
+    @apply animate-pulse;
+  }
+  
+  /* Notification badge effects */
+  .notification-badge {
+    @apply relative;
+  }
+  
+  .notification-badge::after {
+    content: '';
+    @apply absolute top-1 right-1 w-2 h-2 bg-red-500 rounded-full;
+    animation: pulse-notification 2s infinite;
+  }
+  
+  @keyframes pulse-notification {
+    0% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+    }
+    
+    70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 5px rgba(220, 38, 38, 0);
+    }
+    
+    100% {
+      transform: scale(0.95);
+      box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+    }
+  }
+  
+  /* Focus effect for input fields */
+  .input-focus-effect {
+    @apply transition-all duration-300 border border-transparent;
+  }
+  
+  .input-focus-effect:focus {
+    @apply border-blue-500 ring-2 ring-blue-500 ring-opacity-20;
+  }
+  
+  /* Loading indicator */
+  .loading-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    border-top-color: theme('colors.blue.500');
+    animation: spinner 0.8s linear infinite;
+  }
+  
+  @keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Success checkmark animation */
+  .checkmark {
+    width: 24px;
+    height: 24px;
+    position: relative;
+    display: inline-block;
+    transform: rotate(45deg);
+  }
+  
+  .checkmark::before {
+    content: '';
+    position: absolute;
+    width: 3px;
+    height: 10px;
+    background-color: theme('colors.green.500');
+    left: 13px;
+    top: 6px;
+  }
+  
+  .checkmark::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 3px;
+    background-color: theme('colors.green.500');
+    left: 8px;
+    top: 13px;
+  }
+  
+  .checkmark-circle {
+    animation: checkmark-circle 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    opacity: 0;
+    transform-origin: 50% 50%;
+  }
+  
+  @keyframes checkmark-circle {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+}

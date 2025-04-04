@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SecureTransport - AI Security Platform</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
+    <style>
+      @keyframes pulse {
+        0% {
+          transform: translate(-50%, -50%) scale(0.7);
+          opacity: 1;
+        }
+        70% {
+          transform: translate(-50%, -50%) scale(2);
+          opacity: 0;
+        }
+        100% {
+          transform: translate(-50%, -50%) scale(0.7);
+          opacity: 0;
+        }
+      }
+      
+      .vehicle-marker {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        position: absolute;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 0 3px rgba(255,255,255,0.3);
+        z-index: 10;
+        cursor: pointer;
+        transition: all 0.5s ease;
+      }
+      
+      .vehicle-marker::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        background: rgba(255,255,255,0.2);
+        transform: translate(-50%, -50%);
+        animation: pulse 2s infinite;
+      }
+      
+      .risk-zone {
+        position: absolute;
+        border-radius: 50%;
+        opacity: 0.4;
+        transform: translate(-50%, -50%);
+        z-index: 5;
+      }
+      
+      .map-container {
+        height: 100%;
+        width: 100%;
+        background-color: #1a1a1a;
+        position: relative;
+        overflow: hidden;
+      }
+      
+      .map-overlay {
+        background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.3));
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        pointer-events: none;
+      }
+      
+      .camera-feed {
+        aspect-ratio: 16/9;
+        background-color: #000;
+        overflow: hidden;
+        position: relative;
+      }
+      
+      .detection-box {
+        position: absolute;
+        border: 2px solid;
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+      
+      .detection-label {
+        font-size: 10px;
+        padding: 1px 4px;
+        margin-top: -18px;
+        margin-left: -2px;
+        white-space: nowrap;
+      }
+      
+      .grid-dots {
+        background-image: radial-gradient(#4a4a4a 1px, transparent 1px);
+        background-size: 20px 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>
